@@ -12,7 +12,7 @@ public class BorrachaNatural extends Material implements IBorracha {
     
     @Override
     public String getBorracha() {
-        return "Borracha de origem natural";
+        return this.nome + ": extraída do látex.";
     }
     
 }

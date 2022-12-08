@@ -12,7 +12,7 @@ public class TecidoNatural extends Material implements ITecido {
     
     @Override
     public String getTecido() {
-        return "Tecido de origem natural";
+        return this.nome + ": 100% algodão.";
     }
     
 }
