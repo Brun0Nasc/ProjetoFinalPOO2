@@ -1,6 +1,6 @@
 package infra;
 
-import interfaces.IPalmilha;
+import interfaces_materiais.IPalmilha;
 
 public class Palmilha extends Material implements IPalmilha {
 

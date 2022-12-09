@@ -1,6 +1,6 @@
 package infra;
 
-import interfaces.IBorracha;
+import interfaces_materiais.IBorracha;
 
 public class BorrachaNatural extends Material implements IBorracha {
 

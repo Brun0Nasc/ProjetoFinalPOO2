@@ -1,6 +1,6 @@
 package infra;
 
-import interfaces.ITecido;
+import interfaces_materiais.ITecido;
 
 public class TecidoSintetico extends Material implements ITecido {
 
