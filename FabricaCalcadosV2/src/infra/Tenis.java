@@ -1,10 +1,14 @@
 package infra;
 
-public class Tenis extends Componente {
+import factorymethod.Calcado;
+import factorymethod.IMateriaisFabrica;
 
-    public Tenis() {
-        this.nome = "Tenis";
-        this.custo = 12;
+public class Tenis extends Calcado {
+
+     public Tenis(IMateriaisFabrica materiais) {
+        super(materiais);
+        this.setNome("Tenis");
+        this.custo = 10;
     }
     
 }

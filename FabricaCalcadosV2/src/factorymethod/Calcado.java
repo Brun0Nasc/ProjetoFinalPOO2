@@ -1,7 +1,6 @@
 package factorymethod;
 
 import infra.Componente;
-import infra.DecoradorMateriais;
 
 public abstract class Calcado {
     private String cor;
@@ -47,9 +46,7 @@ public abstract class Calcado {
     }
     
     public void fabricar(Componente c){
-        System.out.println("__________________________________");
         montar(c);
-        System.out.println("__________________________________");
         encaixotar();
     }   
     

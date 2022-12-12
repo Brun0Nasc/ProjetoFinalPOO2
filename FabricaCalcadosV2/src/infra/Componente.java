@@ -1,7 +1,5 @@
 package infra;
 
-import factorymethod.Calcado;
-
 public abstract class Componente {
     protected String nome;
     protected double custo;
