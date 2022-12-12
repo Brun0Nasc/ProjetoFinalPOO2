@@ -1,11 +1,30 @@
 package factorymethod;
 
 import infra.Componente;
+import infra.DecoradorMateriais;
 
-public abstract class Calcado extends Componente {
+public abstract class Calcado {
     private String cor;
     private double tamanho;
     private IMateriaisFabrica materiais;
+    protected String nome;
+    protected double custo;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getCusto() {
+        return custo;
+    }
+
+    public void setCusto(double custo) {
+        this.custo = custo;
+    }
 
     public Calcado(IMateriaisFabrica materiais) {
         this.materiais = materiais;
@@ -27,17 +46,22 @@ public abstract class Calcado extends Componente {
         this.tamanho = tamanho;
     }
     
-    public void fabricar(){
-        
-    }
+    public void fabricar(Componente c){
+        System.out.println("__________________________________");
+        montar(c);
+        System.out.println("__________________________________");
+        encaixotar();
+    }   
     
-    public void montar(){
+    public void montar(Componente c){
+        
         System.out.println("Montando " + this.getNome());
         System.out.println("Materiais:");
-        System.out.println(materiais.setBorracha().getBorracha());
-        System.out.println(materiais.setCouro().getCouro());
-        System.out.println(materiais.setTecido().getTecido());
-        System.out.println(materiais.setPalmilha().getPalmilha());
+        
+        System.out.println(materiais.setBorracha(c).getBorracha());
+        System.out.println(materiais.setCouro(c).getCouro());
+        System.out.println(materiais.setTecido(c).getTecido());
+        System.out.println(materiais.setPalmilha(c).getPalmilha());
     }
     
     public void encaixotar(){

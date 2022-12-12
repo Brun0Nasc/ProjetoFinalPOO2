@@ -1,9 +1,13 @@
 package infra;
 
-public class Sapato extends Componente {
+import factorymethod.Calcado;
+import factorymethod.IMateriaisFabrica;
 
-    public Sapato() {
-        this.nome = "Sapato";
+public class Sapato extends Calcado {
+
+    public Sapato(IMateriaisFabrica materiais) {
+        super(materiais);
+        this.setNome("Sapato");
         this.custo = 15;
     }
     

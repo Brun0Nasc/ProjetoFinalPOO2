@@ -1,0 +1,26 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package factorymethod;
+
+import infra.Sapato;
+import interfaces_materiais.IFabricas;
+
+/**
+ *
+ * @author brisa
+ */
+public class FabricaCrato implements IFabricas {
+
+    private IMateriaisFabrica materiais = new MateriaisCrato();
+    
+    @Override
+    public Calcado criarCalcado(Class c) {
+        if(c == Sapato.class){
+            return new Sapato(materiais);
+        }
+        return null;
+    }
+    
+}

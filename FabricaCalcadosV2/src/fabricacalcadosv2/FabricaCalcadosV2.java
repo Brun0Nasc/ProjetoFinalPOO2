@@ -4,10 +4,13 @@
  */
 package fabricacalcadosv2;
 
-import infra.BorrachaNatural;
+import factorymethod.Calcado;
+import factorymethod.FabricaCrato;
+import factorymethod.MateriaisCrato;
 import infra.Componente;
+import infra.DecoradorMateriais;
 import infra.Sapato;
-import infra.TecidoNatural;
+import interfaces_materiais.IFabricas;
 
 /**
  *
@@ -19,13 +22,29 @@ public class FabricaCalcadosV2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Componente c = new Sapato();
-        c = new TecidoNatural(c);
-        c = new BorrachaNatural(c);
-        
-        System.out.println(c.getNome());
-        System.out.println("Custo: " + c.getCusto());
+       Calcado c;
+       Componente materiais = new DecoradorMateriais();
+       IFabricas fCrato = new FabricaCrato();
+       
+       c = fCrato.criarCalcado(Sapato.class);
+       
+       materiais.setNome(c.getNome());
+       materiais.setCusto(c.getCusto());
+       
+       c.fabricar(materiais);
+       
+       MateriaisCrato m = new MateriaisCrato();
+       m.setComponente(materiais);
+       m.setBorracha(m.getComponente());
+       m.setCouro(m.getComponente());
+       m.setTecido(m.getComponente());
+       m.setPalmilha(m.getComponente());
+       
+       materiais = m.getComponente();
+       
+       System.out.println(materiais.getNome());
+       System.out.println(materiais.getCusto());
+       
     }
     
 }
